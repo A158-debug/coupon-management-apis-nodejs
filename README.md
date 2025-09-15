@@ -371,45 +371,7 @@ POST /api/apply-coupon/60f7b1b9e1b7c123456789ab
 }
 ```
 
-## 🧪 Testing
 
-### Running Tests
-```bash
-# Run all tests
-npm test
-
-# Run with coverage
-npm run test:coverage
-
-# Run specific test file
-npm test coupon.test.js
-```
-
-### Sample Test Cases
-```javascript
-// tests/coupon.test.js
-describe('Coupon Management API', () => {
-  test('should create cart-wise coupon', async () => {
-    const coupon = {
-      code: 'TEST10',
-      type: 'cart-wise',
-      description: 'Test coupon',
-      cartWiseDetails: {
-        threshold: 100,
-        discount: 10
-      }
-    };
-    
-    const response = await request(app)
-      .post('/api/coupons')
-      .send(coupon)
-      .expect(201);
-    
-    expect(response.body.success).toBe(true);
-    expect(response.body.data.code).toBe('TEST10');
-  });
-});
-```
 
 ## 🔧 Configuration
 
